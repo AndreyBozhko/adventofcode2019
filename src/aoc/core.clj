@@ -1,4 +1,5 @@
-(ns aoc.core)
+(ns aoc.core
+  (:require [clojure.string :as str]))
 
 
 (def aoc-days
@@ -10,7 +11,7 @@
 (defn -main [& args]
 
   (let [day        (first args)
-        input-path (format "resources/input%s" (apply str (drop 3 day)))]
+        input-path (format "resources/input%s" (str/join (drop 3 day)))]
 
     ;; assert that the day is one of the allowed values
     (assert (string? day))

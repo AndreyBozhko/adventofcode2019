@@ -10,7 +10,7 @@
 
 
 (defn check [group-sizes num]
-  (let [v (into [] (str num))
+  (let [v (vec (str num))
         s (set (vals (frequencies v)))]
     (and (apply <= (map int v))
          (some s group-sizes))))

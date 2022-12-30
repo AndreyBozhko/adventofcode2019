@@ -31,7 +31,7 @@
 (defn calculate [steps reduced-input]
   (->> reduced-input
        (reduce (fn [coll x]
-                 (let [old-c (next (first coll))
+                 (let [old-c (nfirst coll)
                        new-c (reduce #(conj %1 (rem (+ %2 (first %1)) 10))
                                      (list x)
                                      old-c)]

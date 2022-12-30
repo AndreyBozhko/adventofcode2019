@@ -44,12 +44,12 @@
                                             (grids (inc level)))))
 
         add-cnt1     (cond
-                       (= 0 x) (dec-level-fn {:x (dec center) :y center})
+                       (zero? x) (dec-level-fn {:x (dec center) :y center})
                        (= (dec size) x) (dec-level-fn {:x (inc center) :y center})
                        :else 0)
 
         add-cnt2     (cond
-                       (= 0 y) (dec-level-fn {:x center :y (dec center)})
+                       (zero? y) (dec-level-fn {:x center :y (dec center)})
                        (= (dec size) y) (dec-level-fn {:x center :y (inc center)})
                        :else 0)
 
